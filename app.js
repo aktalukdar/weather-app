@@ -43,7 +43,8 @@ app.post('/', function (req, res) {
                 }
                 let mainWeatherCondition= weather.weather[0].main.toLowerCase();
                 date = date+ " "+ monthsName[new Date().getMonth()];
-                res.render('index', { weather: {temp:temp,mainWeatherCondition:mainWeatherCondition, weatherCondition:weatherCondition, place:place, date:date}, error: null });
+                let weatherIcon="http://openweathermap.org/img/wn/"+ weather.weather[0].icon +"@2x.png";
+                res.render('index', { weather: {temp:temp,mainWeatherCondition:mainWeatherCondition, weatherCondition:weatherCondition, place:place, date:date,weatherIcon:weatherIcon}, error: null });
                 
             }
         }

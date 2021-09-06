@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="css/styles.css"/> 
     </head>
     <body>
-        <div class="main-content">
+        <div class="main-content" >
             
             <article class="widget">
                 <h1 class="h1">Weather App</h1>
@@ -16,23 +16,10 @@
                 
                   
                 <div class="weatherIcon">
-                    <% if(weather){ %>
-                    
-                        <% if(weather.mainWeatherCondition=="fog"){ %>
-                            <i class="wi wi-fog"></i>
-                        <% } else if(weather.mainWeatherCondition=="cloudy"){ %>  
-                            <i class="wi wi-cloudy"></i>
-                        <% } else if(weather.mainWeatherCondition=="rain-wind"){ %>  
-                            <i class="wi wi-rain-wind"></i>
-                        <% } else if(weather.mainWeatherCondition=="windy"){ %>  
-                            <i class="wi wi-windy"></i>
-                        <% } else if(weather.mainWeatherCondition=="rain"){ %>  
-                            <i class="wi wi-rain"></i>
-                        <% } else if(weather.mainWeatherCondition=="smog"){ %>  
-                            <i class="wi wi-smog"></i>
-                        <% } else{ %>  
-                                <i class="wi wi-cloud"></i>
-                        <% } %>
+                    <% if(weather && weather.weatherIcon){ %>
+                        <img src="<%= weather.weatherIcon %>" />
+                    <% } else{ %>  
+                        <i class="wi wi-cloud"></i>
                     <% } %>
                 </div>
                 <div class="weatherInfo">
@@ -46,6 +33,7 @@
                             <%= error %>
                           <% } %>    
                         <div class="weatherCondition">
+                            
                             <% if(weather && weather.weatherCondition !== null){ %>
                                 <%= weather.weatherCondition %>
                             <% } %>
