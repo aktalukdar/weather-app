@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Weather App</title>
+        <link rel="stylesheet" href="css/styles.css"/> 
+    </head>
+    <body>
+        <div class="main-content">
+            
+            <article class="widget">
+                <h1 class="h1">Weather App</h1>
+                <form class="weatherLocation" action="/" method="POST">
+                    <input placeholder="location..." type = "text" name="cityName"/>
+                    <button>Search</button>
+                </form>
+                
+                  
+                <div class="weatherIcon">
+                    <% if(weather){ %>
+                    
+                        <% if(weather.mainWeatherCondition=="fog"){ %>
+                            <i class="wi wi-fog"></i>
+                        <% } else if(weather.mainWeatherCondition=="cloudy"){ %>  
+                            <i class="wi wi-cloudy"></i>
+                        <% } else if(weather.mainWeatherCondition=="rain-wind"){ %>  
+                            <i class="wi wi-rain-wind"></i>
+                        <% } else if(weather.mainWeatherCondition=="windy"){ %>  
+                            <i class="wi wi-windy"></i>
+                        <% } else if(weather.mainWeatherCondition=="rain"){ %>  
+                            <i class="wi wi-rain"></i>
+                        <% } else if(weather.mainWeatherCondition=="smog"){ %>  
+                            <i class="wi wi-smog"></i>
+                        <% } else{ %>  
+                                <i class="wi wi-cloud"></i>
+                        <% } %>
+                    <% } %>
+                </div>
+                <div class="weatherInfo">
+                    <div class="temperature"><span>
+                        <% if(weather && weather.temp !== null){ %>
+                        <%= weather.temp %>
+                        <% } %>
+                    </span></div>
+                    <div class="description">
+                        <% if(error !== null){ %>
+                            <%= error %>
+                          <% } %>    
+                        <div class="weatherCondition">
+                            <% if(weather && weather.weatherCondition !== null){ %>
+                                <%= weather.weatherCondition %>
+                            <% } %>
+                        </div>    
+                        <div class="place">
+                            
+                            <% if(weather && weather.place !== null){ %>
+                                <%= weather.place %>
+                            <% } %>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="date">
+                    <% if(weather && weather.date !== null){ %>
+                        <%= weather.date %>
+                    <% } %>
+                </div>
+                <div><a href="https://codepen.io/takeradi/pen/ONJzEv" target="_blank">HTML and CSS credit </a></div>
+            </article>
+            
+        </div>
+        <div>
+            
+        </div>
+    </body>
+</html>
