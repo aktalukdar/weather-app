@@ -1,4 +1,4 @@
 # weather-app
 
-
-Hosted [Heroku](https://afzal-weather-app.herokuapp.com/) 
+[Click here](https://codepen.io/takeradi/pen/ONJzEv) for html and css credit.
+Hosted on [Heroku](https://afzal-weather-app.herokuapp.com/) 
